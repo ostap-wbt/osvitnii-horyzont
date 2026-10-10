@@ -10,14 +10,30 @@
   const commandResponses = {
     'help': `
 <span class="term-prompt">Доступні системні команди:</span>
+  • <span class="term-cyan">teacher</span>   - Інформація про створення курсів викладачами
+  • <span class="term-cyan">math</span>      - Моделювання математичних та фізичних обчислень
   • <span class="term-cyan">scan</span>      - Запустити сканування вразливостей периметру (Cyber Range)
   • <span class="term-cyan">robot</span>     - Отримати телеметрію польотного контролера БПЛА (ROS 2)
   • <span class="term-cyan">vr</span>        - Ініціалізація OpenXR шолома просторових обчислень
   • <span class="term-cyan">net</span>       - Тест затримок магістрального вузла 5G/Cloud Backbone
   • <span class="term-cyan">ai</span>        - Запуск моделі детекції кіберзагроз у реальному часі
   • <span class="term-cyan">status</span>    - Перевірити статус інфраструктури (Atlas + Render)
-  • <span class="term-cyan">courses</span>   - Вивести список топових спеціалізацій 2026/2027
+  • <span class="term-cyan">courses</span>   - Вивести список усіх відкритих курсів
   • <span class="term-cyan">clear</span>     - Очистити консоль терміналу
+`,
+    'teacher': `
+<span class="term-prompt">[TEACHER STUDIO MODULE]</span>
+[✓] Підтримка дисциплін: Точні науки, Гуманітарні, Мови, STEM, IT, Мистецтво.
+[✓] Генератор запрошень: Унікальні коди курсів (напр., MATH-4019, CYBER-1042).
+[✓] Публікація: Лекції, домашні завдання, посилання на Google Meet / Zoom вебінари.
+<span class="term-success">[READY]</span> Натисніть "Створити курс" у меню для запуску власної програми!
+`,
+    'math': `
+<span class="term-prompt">[STEM / MATH CALCULUS]</span>
+[+] Функція: f(x) = ∫ (3x² + sin(2x)) dx
+[+] Аналітичний розв'язок: F(x) = x³ - 0.5*cos(2x) + C
+[+] Моделювання GeoGebra: Візуалізовано в 3D просторі
+<span class="term-success">[OK]</span> Модуль точних наук функціонує у штатному режимі.
 `,
     'scan': `
 <span class="term-prompt">[CYBERSEC KERNEL]</span> Ініціалізація інструментів аудиту безпеки...

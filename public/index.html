@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Освітній горизонт | Платформа інноваційної IT-освіти майбутнього</title>
-  <meta name="description" content="Освітній горизонт: підготовка інженерів майбутнього у сфері кібербезпеки, робототехніки, цифрових мереж, VR/AR та штучного інтелекту. Запуск на Render.com та MongoDB Atlas.">
+  <title>Освітній горизонт | Платформа для викладачів, студентів та інновацій</title>
+  <meta name="description" content="Освітній горизонт: відкрита освітня платформа. Викладачі будь-яких дисциплін створюють авторські курси, публікують лекції та вебінари, запрошують учнів. Реєстрація через Email або Google.">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <link rel="stylesheet" href="/css/animations.css">
   <link rel="stylesheet" href="/css/style.css">
@@ -27,15 +27,18 @@
             <span>ПЛАТФОРМА АКТИВНА: <strong>ОСВІТНІЙ ГОРИЗОНТ</strong></span>
           </span>
           <span class="status-badge" id="live-render-status">
-            Render.com: 🟢 Онлайн (Cloud Node)
+            Render.com: 🟢 Онлайн
           </span>
           <span class="status-badge" id="live-db-status">
-            MongoDB Atlas: 🍃 Підключення (ostap.yunak@gmail.com)
+            MongoDB Atlas: 🍃 Підключено
           </span>
         </div>
         <div class="status-group">
+          <span style="color: var(--neon-cyan); font-size: 0.78rem;">
+            👨‍🏫 Відкрито для викладачів усіх дисциплін | Реєстрація через Google
+          </span>
           <a href="https://github.com/ostap-wbt/osvitnii-horyzont" target="_blank" rel="noopener noreferrer" style="color: var(--neon-cyan); text-decoration: none;">
-            ⌥ GitHub: ostap-wbt/osvitnii-horyzont
+            ⌥ GitHub
           </a>
         </div>
       </div>
@@ -48,25 +51,44 @@
           <img src="/assets/favicon.svg" alt="Логотип Освітній горизонт" class="logo-icon-svg">
           <div class="brand-text">
             <span class="brand-title">ОСВІТНІЙ ГОРИЗОНТ</span>
-            <span class="brand-subtitle">CYBER • ROBOTICS • VR/AR • NETWORKS • CODE</span>
+            <span class="brand-subtitle">ВІДКРИТА ОСВІТНЯ ПЛАТФОРМА ДЛЯ ВСІХ ДИСЦИПЛІН</span>
           </div>
         </a>
 
         <ul class="nav-links">
-          <li><a href="#courses" class="nav-link">Напрямки</a></li>
-          <li><a href="#simulator" class="nav-link">Кібер-Термінал</a></li>
+          <li><a href="#courses" class="nav-link">Каталог курсів</a></li>
+          <li><a href="#teachers-hub" class="nav-link">Для викладачів</a></li>
+          <li><a href="#join-code-section" class="nav-link">Вступ за кодом</a></li>
           <li><a href="#labs" class="nav-link">R&D Лабораторії</a></li>
-          <li><a href="#roadmap" class="nav-link">Шлях студента</a></li>
-          <li><a href="#enroll" class="nav-link">Вступ</a></li>
+          <li><a href="#simulator" class="nav-link">Кібер-Термінал</a></li>
         </ul>
 
         <div class="nav-actions">
-          <button class="btn btn-cyber-outline btn-sm btn-open-modal">
-            Швидка консультація
-          </button>
-          <a href="#enroll" class="btn btn-cyber-solid btn-sm">
-            Записатись
-          </a>
+          <!-- Auth buttons dynamically swapped by JS -->
+          <div id="nav-guest-actions" style="display: flex; gap: 10px; align-items: center;">
+            <button class="btn btn-cyber-outline btn-sm btn-open-auth" data-auth-tab="login">
+              Увійти
+            </button>
+            <button class="btn btn-cyber-solid btn-sm btn-open-auth" data-auth-tab="register">
+              Реєстрація (Вчитель / Учень)
+            </button>
+          </div>
+
+          <div id="nav-user-actions" style="display: none; align-items: center; gap: 12px;">
+            <div class="user-nav-badge">
+              <div class="user-nav-avatar" id="nav-user-avatar">У</div>
+              <div class="user-nav-info">
+                <span class="user-nav-name" id="nav-user-name">Користувач</span>
+                <span class="user-nav-role" id="nav-user-role">Студент</span>
+              </div>
+            </div>
+            <button class="btn btn-cyber-primary btn-sm" id="btn-open-dashboard">
+              Мій кабінет
+            </button>
+            <button class="btn btn-cyber-outline btn-sm" id="btn-user-logout" title="Вийти">
+              Вийти
+            </button>
+          </div>
         </div>
       </div>
     </nav>
@@ -79,49 +101,48 @@
           <div class="hero-content">
             <div class="hero-badge-pill">
               <span class="status-dot"></span>
-              <span>ПРИЙОМ 2026/2027 • ВІДКРИТО НАБІР ДО R&D ЛАБОРАТОРІЙ</span>
+              <span>ВІДКРИТИЙ ПРОСТІР НАВЧАННЯ • ВИКЛАДАЧІ ТА СТУДЕНТИ</span>
             </div>
 
             <h1 class="hero-title">
-              Квантовий стрибок у світ <br>
-              <span class="gradient-text">високих технологій</span>
+              Освіта нового часу <br>
+              <span class="gradient-text">для кожного вчителя та учня</span>
             </h1>
 
             <p class="hero-subtitle">
-              Практична інженерна підготовка світового рівня. Опановуйте <strong>кібербезпеку</strong>, 
-              <strong>робототехніку</strong>, <strong>цифрові мережі 5G/6G</strong>, <strong>VR/AR просторові світи</strong> 
-              та <strong>програмування зі штучним інтелектом</strong> на реальних R&D проектах.
+              Єдина платформа, де викладачі <strong>будь-яких предметів</strong> (математика, фізика, мови, історія, природничі науки, IT, кібербезпека та робототехніка) створюють власні курси, публікують лекції, проводять вебінари та запрошують учнів за лічені секунди.
             </p>
 
             <div class="hero-cta-group">
-              <a href="#courses" class="btn btn-cyber-solid">
-                ⚡ Обрати спеціалізацію
+              <button class="btn btn-cyber-solid btn-open-auth" data-auth-tab="register" data-role="teacher">
+                👨‍🏫 Створити курс (Я викладач)
+              </button>
+              <a href="#join-code-section" class="btn btn-cyber-primary">
+                🔑 Приєднатися за кодом (Я учень)
               </a>
-              <a href="#simulator" class="btn btn-cyber-primary">
-                💻 Запустити симулятор
-              </a>
-              <button class="btn btn-cyber-outline btn-open-modal">
-                Отримати консультацію
+              <button class="btn btn-google btn-sm btn-google-login-trigger" style="width: auto; margin-bottom: 0;">
+                <svg class="google-icon" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg>
+                Вхід через Google
               </button>
             </div>
 
             <!-- Metrics Strip -->
             <div class="hero-metrics-strip">
               <div class="metric-item">
-                <span class="metric-val">1,480+</span>
-                <span class="metric-label">Студентів & Випускників</span>
+                <span class="metric-val" id="metric-students">1,500+</span>
+                <span class="metric-label">Студентів & Учнів</span>
               </div>
               <div class="metric-item">
-                <span class="metric-val">97.4%</span>
-                <span class="metric-label">Працевлаштування</span>
+                <span class="metric-val" id="metric-teachers">50+</span>
+                <span class="metric-label">Викладачів-новаторів</span>
               </div>
               <div class="metric-item">
-                <span class="metric-val">6 R&D</span>
-                <span class="metric-label">Лабораторій & Полігонів</span>
+                <span class="metric-val" id="metric-courses">28</span>
+                <span class="metric-label">Відкритих курсів</span>
               </div>
               <div class="metric-item">
-                <span class="metric-val">48+</span>
-                <span class="metric-label">Партнерів High-Tech</span>
+                <span class="metric-val">100%</span>
+                <span class="metric-label">Хмарна база MongoDB</span>
               </div>
             </div>
           </div>
@@ -135,22 +156,25 @@
                   <span class="term-dot yellow"></span>
                   <span class="term-dot green"></span>
                 </div>
-                <div class="terminal-title">horizon-sim-v2.6 // bash terminal</div>
+                <div class="terminal-title">horizon-core // bash terminal</div>
                 <div style="font-size: 0.72rem; color: var(--neon-cyan);">LIVE SIMULATOR</div>
               </div>
 
               <div class="terminal-body" id="terminal-output">
                 <div class="term-line">
-                  <span class="term-prompt">horizon@platform:~$</span> system_init --env=production
+                  <span class="term-prompt">horizon@platform:~$</span> system_init --multi-discipline
                 </div>
                 <div class="term-line">
-                  [✓] Завантаження модулів ядра: Кібербезпека, Робототехніка, VR/AR, Мережі, ШІ... [OK]
+                  [✓] Модуль реєстрації викладачів: <span class="term-success">АКТИВНИЙ (Усі дисципліни)</span>
                 </div>
                 <div class="term-line">
-                  [✓] Хмара: Render.com Cloud Platform [READY]
+                  [✓] Сервіс публікації лекцій та вебінарів: <span class="term-success">ГОТОВИЙ</span>
                 </div>
                 <div class="term-line">
-                  [✓] Кластер БД: MongoDB Atlas (ostap.yunak@gmail.com) [ONLINE]
+                  [✓] Автентифікація Google & Email: <span class="term-success">ПІДКЛЮЧЕНО</span>
+                </div>
+                <div class="term-line">
+                  [✓] MongoDB Atlas Cluster: <span class="term-success">HorizonCluster (AWS Frankfurt)</span>
                 </div>
               </div>
 
@@ -158,13 +182,12 @@
                 <span style="font-size: 0.72rem; color: var(--text-dim); display: block; width: 100%; margin-bottom: 2px;">
                   Швидкі команди інтерактивної демонстрації:
                 </span>
-                <button class="term-btn" data-cmd="scan">🛡️ Сканувати периметр</button>
+                <button class="term-btn" data-cmd="teacher">👨‍🏫 Викладач</button>
+                <button class="term-btn" data-cmd="courses">📚 Всі дисципліни</button>
+                <button class="term-btn" data-cmd="scan">🛡️ Кіберзахист</button>
                 <button class="term-btn" data-cmd="robot">🤖 Дрон ROS 2</button>
-                <button class="term-btn" data-cmd="vr">🥽 VR OpenXR</button>
-                <button class="term-btn" data-cmd="net">🌐 Ping 5G</button>
-                <button class="term-btn" data-cmd="ai">🧠 AI Інференс</button>
+                <button class="term-btn" data-cmd="math">📐 Математика</button>
                 <button class="term-btn" data-cmd="status">⚡ Статус стеку</button>
-                <button class="term-btn" data-cmd="courses">📚 Курси</button>
                 <button class="term-btn" data-cmd="help">❓ Допомога</button>
               </div>
 
@@ -179,47 +202,126 @@
       </div>
     </section>
 
-    <!-- Directions & Course Catalog Section -->
+    <!-- Quick Join by Invite Code Section -->
+    <section class="section" id="join-code-section" style="padding: 40px 0; background: rgba(13, 20, 44, 0.4);">
+      <div class="container">
+        <div style="background: linear-gradient(135deg, rgba(16, 24, 54, 0.9), rgba(10, 15, 34, 0.95)); border: 1px solid var(--border-cyan); border-radius: 14px; padding: 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px;">
+          <div>
+            <span class="section-tag" style="margin-bottom: 4px;">// ШВИДКИЙ ВХІД ДЛЯ УЧНІВ</span>
+            <h3 style="font-size: 1.45rem; font-weight: 700; color: #fff; margin-bottom: 6px;">
+              Отримали код курсу від свого вчителя чи викладача?
+            </h3>
+            <p style="color: var(--text-muted); font-size: 0.92rem; max-width: 580px;">
+              Введіть унікальний код (наприклад, <code>MATH-4019</code> або <code>CYBER-1042</code>), щоб миттєво долучитися до навчальних матеріалів, лекцій та вебінарів.
+            </p>
+          </div>
+
+          <form id="quick-join-code-form" style="display: flex; gap: 10px; width: 100%; max-width: 440px;">
+            <input type="text" id="join-invite-code-input" class="form-control" placeholder="Введіть код курсу (напр. MATH-4019)" style="text-transform: uppercase;" required>
+            <button type="submit" class="btn btn-cyber-solid" style="white-space: nowrap;">
+              Приєднатися
+            </button>
+          </form>
+        </div>
+        <div id="quick-join-alert" class="form-alert" style="margin-top: 12px;"></div>
+      </div>
+    </section>
+
+    <!-- For Teachers Hub Section -->
+    <section class="section" id="teachers-hub">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">// КАБІНЕТ ВИКЛАДАЧА</span>
+          <h2 class="section-title">Інструменти для вчителів та викладачів усіх дисциплін</h2>
+          <p class="section-desc">
+            Викладайте математику, фізику, мови, історію, хімію чи робототехніку. 
+            Платформа забезпечує повний цикл роботи з учнями без технічних труднощів.
+          </p>
+        </div>
+
+        <div class="labs-grid">
+          <div class="lab-card">
+            <div class="lab-icon-box">➕</div>
+            <h3 class="lab-title">Створення авторських курсів</h3>
+            <p class="lab-desc">
+              Гнучке налаштування предмету, рівня підготовки (шкільний, студентський, професійний), опису програми та цілей курсу за 2 хвилини.
+            </p>
+          </div>
+
+          <div class="lab-card">
+            <div class="lab-icon-box">📢</div>
+            <h3 class="lab-title">Публікація лекцій та вебінарів</h3>
+            <p class="lab-desc">
+              Додавайте конспекти лекцій, презентації, посилання на прямі ефіри у Google Meet / Zoom та відеозаписи занять для студентів.
+            </p>
+          </div>
+
+          <div class="lab-card">
+            <div class="lab-icon-box">✉️</div>
+            <h3 class="lab-title">Зручне запрошення учнів</h3>
+            <p class="lab-desc">
+              Кожен курс отримує унікальний код та посилання. Запрошуйте окремих учнів за email або діліться кодом з усім класом/групою.
+            </p>
+          </div>
+
+          <div class="lab-card">
+            <div class="lab-icon-box">👥</div>
+            <h3 class="lab-title">Облік студентів у MongoDB Atlas</h3>
+            <p class="lab-desc">
+              Бачте список усіх зареєстрованих учнів вашого курсу, дату їхнього приєднання та контактні дані у реальному часі.
+            </p>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+          <button class="btn btn-cyber-solid btn-open-auth" data-auth-tab="register" data-role="teacher">
+            🚀 Зареєструватися як викладач та створити перший курс
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Directions & Multi-Disciplinary Course Catalog -->
     <section class="section" id="courses">
       <div class="container">
         <div class="section-head">
-          <span class="section-tag">// КАТАЛОГ СПЕЦІАЛІЗАЦІЙ</span>
-          <h2 class="section-title">Оберіть свій вектор у світі технологій</h2>
+          <span class="section-tag">// ВІДКРИТИЙ КАТАЛОГ ДИСЦИПЛІН</span>
+          <h2 class="section-title">Оберіть напрямок або знайдіть курс викладача</h2>
           <p class="section-desc">
-            Програми розроблені спільно з інженерами провідних технологічних компаній, 
-            наукових інститутів та оборонних підприємств.
+            Від точних та природничих наук до кібербезпеки, програмування та іноземних мов. 
+            Курси від шкільних викладачів, університетських професорів та IT-практиків.
           </p>
         </div>
 
         <!-- Filter Matrix Tabs -->
         <div class="filter-tabs">
-          <button class="filter-btn active" data-category="all">Всі спеціалізації</button>
+          <button class="filter-btn active" data-category="all">Всі дисципліни</button>
+          <button class="filter-btn" data-category="stem">📐 Точні науки (Математика, Фізика)</button>
+          <button class="filter-btn" data-category="science">🌍 Природничі (Біологія, Хімія)</button>
+          <button class="filter-btn" data-category="languages">🇬🇧 Мови та Комунікація</button>
           <button class="filter-btn" data-category="cybersecurity">🛡️ Кібербезпека</button>
-          <button class="filter-btn" data-category="robotics">🤖 Робототехніка & IoT</button>
-          <button class="filter-btn" data-category="vrar">🥽 VR / AR & Metaverse</button>
-          <button class="filter-btn" data-category="networks">🌐 Цифрові мережі & Cloud</button>
+          <button class="filter-btn" data-category="robotics">🤖 Робототехніка</button>
+          <button class="filter-btn" data-category="vrar">🥽 VR / AR</button>
           <button class="filter-btn" data-category="programming">💻 Програмування & ШІ</button>
         </div>
 
         <!-- Courses Dynamic Grid -->
         <div class="courses-grid" id="courses-grid">
-          <!-- Populated dynamically via /api/courses -->
           <div class="term-prompt" style="text-align: center; grid-column: 1 / -1; padding: 40px;">
-            Ініціалізація каталогу навчальних програм...
+            Ініціалізація каталогу навчальних дисциплін...
           </div>
         </div>
       </div>
     </section>
 
-    <!-- High-Tech R&D Infrastructure & Labs -->
+    <!-- R&D Infrastructure & Labs -->
     <section class="section" id="labs" style="background: rgba(8, 12, 28, 0.4);">
       <div class="container">
         <div class="section-head">
-          <span class="section-tag">// МАТЕРІАЛЬНО-ТЕХНІЧНИЙ ХАБ</span>
+          <span class="section-tag">// ТЕХНОЛОГІЧНИЙ ХАБ</span>
           <h2 class="section-title">Практичні лабораторії та полігони</h2>
           <p class="section-desc">
-            Студенти мають доступ до сучасного обладнання як очно у кампусі, 
-            так і віддалено через віртуалізовані цифрові двійники 24/7.
+            Для технічних та наукових дисциплін доступні сучасні фізичні та цифрові полігони.
           </p>
         </div>
 
@@ -228,17 +330,15 @@
             <div class="lab-icon-box">🛡️</div>
             <h3 class="lab-title">Кіберполігон "Cyber Range"</h3>
             <p class="lab-desc">
-              Ізольована інфраструктура з віртуальними серверами та мережами для моделювання реальних кібератак, 
-              відпрацювання Red/Blue Team змагань та дослідження шкідливого ПЗ у безпечному sandbox.
+              Ізольована інфраструктура з віртуальними серверами для моделювання кібератак, змагань Red/Blue Team та аналізу шкідливого ПЗ.
             </p>
           </div>
 
           <div class="lab-card">
             <div class="lab-icon-box">🤖</div>
-            <h3 class="lab-title">Робототехнічний R&D Полігон</h3>
+            <h3 class="lab-title">R&D Полігон робототехніки</h3>
             <p class="lab-desc">
-              Парк тестових колісних та гусеничних роботів, безпілотні авіаційні комплекси (UAV), 
-              LiDAR-сканери, паяльні станції та плати розробки STM32/ESP32 з підтримкою ROS 2.
+              FPV-дрони, гусеничні платформи, плати STM32/ESP32 з ROS 2, LiDAR та середовище симуляції Gazebo.
             </p>
           </div>
 
@@ -246,227 +346,20 @@
             <div class="lab-icon-box">🥽</div>
             <h3 class="lab-title">Spatial Computing & VR Лабораторія</h3>
             <p class="lab-desc">
-              Шоломи віртуальної та змішаної реальності Meta Quest 3, Apple Vision Pro, 
-              сенсори відстеження жестів, стенди калібрування трекінгу та станції рендерингу на базі RTX 4090.
+              Гарнітури Meta Quest 3, Apple Vision Pro, захват просторових рухів та розробка на Unreal Engine 5.
             </p>
           </div>
 
           <div class="lab-card">
-            <div class="lab-icon-box">🌐</div>
-            <h3 class="lab-title">5G & Хмарний Дата-вузол</h3>
+            <div class="lab-icon-box">📐</div>
+            <h3 class="lab-title">Віртуальні STEM-симулятори</h3>
             <p class="lab-desc">
-              Маршрутизатори та комутатори Cisco Catalyst, приватна базова станція 5G Standalone, 
-              стенди програмно-конфігурованих мереж (SDN) та доступ до кластерів Kubernetes.
+              Інтерактивні математичні та фізичні лабораторії GeoGebra, PhET, розрахункові кластери Python SciPy.
             </p>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Learning Roadmap -->
-    <section class="section" id="roadmap">
-      <div class="container">
-        <div class="section-head">
-          <span class="section-tag">// ОСВІТНЯ ТРАЄКТОРІЯ</span>
-          <h2 class="section-title">4 кроки від базових знань до High-Tech інженера</h2>
-          <p class="section-desc">
-            Структурована методологія інтенсивного практичного занурення з персональним менторським супроводом.
-          </p>
-        </div>
-
-        <div class="roadmap-steps">
-          <div class="step-card">
-            <div class="step-number">01</div>
-            <h3 class="step-title">Фундамент & Архітектура</h3>
-            <p class="step-desc">
-              Глибоке розуміння базових принципів комп'ютерних систем, протоколів передачі даних, 
-              математичного апарату та алгоритмів.
-            </p>
-          </div>
-
-          <div class="step-card">
-            <div class="step-number">02</div>
-            <h3 class="step-title">R&D Лабораторний практикум</h3>
-            <p class="step-desc">
-              Щотижневі практичні воркшопи: написання прошивок, збирання роботів, налаштування фаєрволів 
-              та кодинг просторових VR-додатків.
-            </p>
-          </div>
-
-          <div class="step-card">
-            <div class="step-number">03</div>
-            <h3 class="step-title">Дипломний High-Tech проект</h3>
-            <p class="step-desc">
-              Розробка власного завершеного інженерного рішення у партнерстві з реальною IT/DefenceTech компанією. 
-              Код публікується на GitHub.
-            </p>
-          </div>
-
-          <div class="step-card">
-            <div class="step-number">04</div>
-            <h3 class="step-title">Кар'єра & Стажування</h3>
-            <p class="step-desc">
-              Підготовка до технічних інтерв'ю, верифікація сертифікатами та прямі рекомендації 
-              до працевлаштування у топ-компанії.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Registration Banner Form (MongoDB Atlas Integration) -->
-    <section class="section" id="enroll">
-      <div class="container">
-        <div class="enroll-banner">
-          <div class="enroll-grid">
-            <div>
-              <span class="section-tag">// ВСТУП 2026/2027</span>
-              <h2 style="font-size: 2.3rem; font-weight: 800; margin-bottom: 16px; line-height: 1.2;">
-                Почніть навчання на платформі <span class="gradient-text">Освітній горизонт</span>
-              </h2>
-              <p style="color: var(--text-muted); margin-bottom: 24px; font-size: 1.05rem;">
-                Заповніть заявку для бронювання місця або безкоштовної консультації з технічним ментором. 
-                Дані надійно зберігаються у хмарі <strong>MongoDB Atlas</strong>.
-              </p>
-
-              <div style="font-family: var(--font-mono); font-size: 0.84rem; color: #a4b8d9; display: flex; flex-direction: column; gap: 8px;">
-                <div>✓ Безкоштовний доступ до першого тижня лекцій</div>
-                <div>✓ Тестування рівня підготовки перед стартом</div>
-                <div>✓ Гнучкий графік (вечірні групи та weekend-інтенсиви)</div>
-                <div>✓ Гарантія менторської підтримки 7 днів на тиждень</div>
-              </div>
-            </div>
-
-            <!-- Enrollment Form -->
-            <form id="banner-registration-form" class="enroll-form">
-              <div class="form-group">
-                <label class="form-label" for="banner-name">Ваше повне ім'я *</label>
-                <input type="text" id="banner-name" name="fullName" class="form-control" placeholder="Остап Юнак" required>
-              </div>
-
-              <div class="form-row">
-                <div class="form-group">
-                  <label class="form-label" for="banner-email">Електронна пошта *</label>
-                  <input type="email" id="banner-email" name="email" class="form-control" placeholder="ostap.yunak@gmail.com" required>
-                </div>
-                <div class="form-group">
-                  <label class="form-label" for="banner-phone">Номер телефону *</label>
-                  <input type="tel" id="banner-phone" name="phone" class="form-control" placeholder="+380 (98) 000-00-00" required>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label" for="banner-course-select">Обраний напрямок навчання *</label>
-                <select id="banner-course-select" name="courseId" class="form-control" required>
-                  <option value="" disabled selected>Завантаження курсів...</option>
-                </select>
-              </div>
-
-              <div class="form-row">
-                <div class="form-group">
-                  <label class="form-label">Формат занять</label>
-                  <select name="format" class="form-control">
-                    <option value="online">Online Interactive</option>
-                    <option value="hybrid">Гібридний (Онлайн + Кампус)</option>
-                    <option value="campus-labs">Очні R&D Лабораторії</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label class="form-label">Ваш поточний рівень</label>
-                  <select name="experienceLevel" class="form-control">
-                    <option value="beginner">Початківець</option>
-                    <option value="intermediate">Середній (Middle)</option>
-                    <option value="advanced">Досвідчений (Senior/Tech)</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label" for="banner-notes">Коментар або питання (опціонально)</label>
-                <input type="text" id="banner-notes" name="notes" class="form-control" placeholder="Цікавить грант, розклад занять або обладнання лабораторії...">
-              </div>
-
-              <button type="submit" class="btn btn-cyber-solid" style="width: 100%; margin-top: 8px;">
-                🚀 Подати заявку (Зберегти в MongoDB Atlas)
-              </button>
-
-              <div id="banner-alert-box" class="form-alert"></div>
-            </form>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Quick Modal Window for Registration -->
-    <div id="registration-modal" class="modal-overlay">
-      <div class="modal-card">
-        <div class="modal-header">
-          <div>
-            <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff;">Запис на обраний курс</h3>
-            <p style="font-size: 0.82rem; color: var(--neon-cyan); font-family: var(--font-mono);">Освітній горизонт // Реєстраційна форма</p>
-          </div>
-          <button id="modal-close-btn" class="modal-close" aria-label="Закрити">&times;</button>
-        </div>
-
-        <div class="modal-body">
-          <form id="modal-registration-form" class="enroll-form">
-            <div class="form-group">
-              <label class="form-label">Ваше ім'я *</label>
-              <input type="text" name="fullName" class="form-control" placeholder="Остап Юнак" required>
-            </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label class="form-label">Email *</label>
-                <input type="email" name="email" class="form-control" placeholder="ostap.yunak@gmail.com" required>
-              </div>
-              <div class="form-group">
-                <label class="form-label">Телефон *</label>
-                <input type="tel" name="phone" class="form-control" placeholder="+380 98 000 0000" required>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Напрямок / Спеціалізація *</label>
-              <select id="modal-course-select" name="courseId" class="form-control" required>
-                <option value="" disabled selected>Оберіть напрямок...</option>
-              </select>
-            </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label class="form-label">Формат навчання</label>
-                <select name="format" class="form-control">
-                  <option value="online">Online</option>
-                  <option value="hybrid">Гібридний</option>
-                  <option value="campus-labs">R&D Лабораторії</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label class="form-label">Рівень підготовки</label>
-                <select name="experienceLevel" class="form-control">
-                  <option value="beginner">Початківець</option>
-                  <option value="intermediate">Middle</option>
-                  <option value="advanced">Senior / Pro</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Коментар</label>
-              <input type="text" name="notes" class="form-control" placeholder="Додаткові побажання...">
-            </div>
-
-            <button type="submit" class="btn btn-cyber-solid" style="width: 100%; margin-top: 10px;">
-              ⚡ Підтвердити реєстрацію
-            </button>
-
-            <div id="modal-alert-box" class="form-alert"></div>
-          </form>
-        </div>
-      </div>
-    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -478,8 +371,7 @@
               <span class="brand-title" style="font-size: 1.15rem;">ОСВІТНІЙ ГОРИЗОНТ</span>
             </div>
             <p style="color: var(--text-muted); font-size: 0.88rem; max-width: 320px; line-height: 1.5; margin-bottom: 16px;">
-              Передова платформа практичної IT-освіти майбутнього. Формуємо лідерів у сферах кіберзахисту, 
-              робототехніки, просторових обчислень та штучного інтелекту.
+              Платформа для викладачів будь-яких предметів та студентів. Створюйте курси, публікуйте лекції, запрошуйте учнів.
             </p>
             <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--neon-cyan);">
               Контактний email: <a href="mailto:ostap.yunak@gmail.com" style="color: var(--neon-cyan);">ostap.yunak@gmail.com</a>
@@ -487,47 +379,354 @@
           </div>
 
           <div class="footer-col">
-            <h4>Напрямки</h4>
+            <h4>Для викладачів</h4>
             <ul>
-              <li><a href="#courses">Кібербезпека & SOC</a></li>
-              <li><a href="#courses">Робототехніка & ROS 2</a></li>
-              <li><a href="#courses">VR/AR & Spatial Comp.</a></li>
-              <li><a href="#courses">Цифрові мережі 5G/6G</a></li>
-              <li><a href="#courses">Fullstack & ШІ (AI/ML)</a></li>
-              <li><a href="#courses">Квантова криптографія</a></li>
+              <li><a href="#" class="btn-open-auth" data-auth-tab="register" data-role="teacher">Реєстрація викладача</a></li>
+              <li><a href="#" class="btn-open-auth" data-auth-tab="login">Вхід у кабінет</a></li>
+              <li><a href="#teachers-hub">Створення курсів</a></li>
+              <li><a href="#teachers-hub">Публікація вебінарів</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Для учнів та студентів</h4>
+            <ul>
+              <li><a href="#courses">Каталог предметів</a></li>
+              <li><a href="#join-code-section">Вхід за кодом курсу</a></li>
+              <li><a href="#" class="btn-open-auth" data-auth-tab="register" data-role="student">Створити акаунт учня</a></li>
+              <li><a href="#" class="btn-google-login-trigger">Вхід через Google</a></li>
             </ul>
           </div>
 
           <div class="footer-col">
             <h4>Інфраструктура</h4>
-            <ul>
-              <li><a href="#labs">R&D Лабораторії</a></li>
-              <li><a href="#simulator">Онлайн Кібер-Термінал</a></li>
-              <li><a href="https://render.com" target="_blank" rel="noopener">Хостинг: Render.com</a></li>
-              <li><a href="https://www.mongodb.com/atlas" target="_blank" rel="noopener">База даних: MongoDB Atlas</a></li>
-              <li><a href="https://github.com/ostap-wbt/osvitnii-horyzont" target="_blank" rel="noopener">GitHub Репозиторій</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-col">
-            <h4>Статус системи</h4>
-            <div style="background: rgba(13, 20, 44, 0.6); border: 1px solid rgba(0, 240, 255, 0.15); border-radius: 8px; padding: 14px; font-family: var(--font-mono); font-size: 0.78rem; display: flex; flex-direction: column; gap: 8px;">
-              <div>🌐 Сервер: Render.com Node.js Web Service</div>
-              <div>🍃 База даних: MongoDB Atlas (Cluster0)</div>
-              <div>🔒 Протокол: TLS 1.3 / OWASP Verified</div>
-              <div>👤 Акаунт власника: ostap.yunak@gmail.com</div>
-              <div>🐙 Репозиторій: ostap-wbt/osvitnii-horyzont</div>
+            <div style="background: rgba(13, 20, 44, 0.6); border: 1px solid rgba(0, 240, 255, 0.15); border-radius: 8px; padding: 14px; font-family: var(--font-mono); font-size: 0.78rem; display: flex; flex-direction: column; gap: 6px;">
+              <div>🌐 Хостинг: Render.com Cloud (Node.js)</div>
+              <div>🍃 База даних: MongoDB Atlas (HorizonCluster)</div>
+              <div>👤 Акаунт: ostap.yunak@gmail.com</div>
+              <div>🔑 Google Sign-In: Активовано</div>
             </div>
           </div>
         </div>
 
         <div class="footer-bottom">
           <div>&copy; 2026 Освітній горизонт. Всі права захищено.</div>
-          <div>Розроблено для інженерів та інноваторів майбутнього.</div>
+          <div>Створено для вчителів, викладачів та студентів України.</div>
         </div>
       </div>
     </footer>
 
+  </div>
+
+  <!-- ============================================== -->
+  <!-- MODAL 1: AUTHENTICATION (EMAIL & GOOGLE)       -->
+  <!-- ============================================== -->
+  <div id="auth-modal" class="modal-overlay">
+    <div class="modal-card" style="max-width: 520px;">
+      <div class="modal-header">
+        <div>
+          <h3 id="auth-modal-title" style="font-size: 1.25rem; font-weight: 700; color: #fff;">Вхід на платформу</h3>
+          <p style="font-size: 0.8rem; color: var(--neon-cyan); font-family: var(--font-mono);">Освітній горизонт // Авторизація</p>
+        </div>
+        <button class="modal-close" id="auth-modal-close" aria-label="Закрити">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        
+        <!-- Google Sign-In Quick Action Button -->
+        <button type="button" class="btn-google" id="btn-google-auth">
+          <svg class="google-icon" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg>
+          <span id="google-btn-text">Продовжити через Google</span>
+        </button>
+
+        <div class="auth-divider">
+          <span>або через електронну пошту</span>
+        </div>
+
+        <!-- Tabs switcher: Login vs Register -->
+        <div style="display: flex; gap: 8px; margin-bottom: 20px;">
+          <button type="button" class="btn btn-cyber-primary btn-sm active" id="tab-btn-login" style="flex: 1;">
+            Вхід
+          </button>
+          <button type="button" class="btn btn-cyber-outline btn-sm" id="tab-btn-register" style="flex: 1;">
+            Реєстрація
+          </button>
+        </div>
+
+        <!-- Form: LOGIN -->
+        <form id="form-login" class="enroll-form">
+          <div class="form-group">
+            <label class="form-label" for="login-email">Електронна пошта</label>
+            <input type="email" id="login-email" name="email" class="form-control" placeholder="teacher@school.ua або student@gmail.com" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="login-password">Пароль</label>
+            <input type="password" id="login-password" name="password" class="form-control" placeholder="••••••••" required>
+          </div>
+
+          <button type="submit" class="btn btn-cyber-solid" style="width: 100%; margin-top: 10px;">
+            Увійти в кабінет
+          </button>
+        </form>
+
+        <!-- Form: REGISTER -->
+        <form id="form-register" class="enroll-form" style="display: none;">
+          
+          <!-- Role selector -->
+          <div class="form-group">
+            <label class="form-label">Оберіть вашу роль на платформі:</label>
+            <div class="role-selector-grid">
+              <label class="role-card-label selected" id="role-label-student">
+                <input type="radio" name="role" value="student" checked>
+                <div class="role-icon">🎓</div>
+                <div class="role-title">Я Студент / Учень</div>
+                <div class="role-desc">Долучатися до курсів, читати лекції, проходити вебінари</div>
+              </label>
+
+              <label class="role-card-label" id="role-label-teacher">
+                <input type="radio" name="role" value="teacher">
+                <div class="role-icon">👨‍🏫</div>
+                <div class="role-title">Я Викладач / Вчитель</div>
+                <div class="role-desc">Створювати курси з будь-якого предмету, запрошувати учнів</div>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="reg-fullname">Ваше повне ім'я *</label>
+            <input type="text" id="reg-fullname" name="fullName" class="form-control" placeholder="Олена Мельник або Дмитро Коваль" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="reg-email">Електронна пошта *</label>
+              <input type="email" id="reg-email" name="email" class="form-control" placeholder="your.name@gmail.com" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="reg-password">Пароль *</label>
+              <input type="password" id="reg-password" name="password" class="form-control" placeholder="Мінімум 6 символів" minlength="6" required>
+            </div>
+          </div>
+
+          <!-- Extra fields for Teacher -->
+          <div id="teacher-extra-fields" style="display: none;">
+            <div class="form-group">
+              <label class="form-label" for="reg-discipline">Предмет або дисципліна викладання *</label>
+              <input type="text" id="reg-discipline" name="discipline" class="form-control" placeholder="Математика, Фізика, Історія, Кібербезпека, Англійська...">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="reg-institution">Навчальний заклад / Організація</label>
+              <input type="text" id="reg-institution" name="institution" class="form-control" placeholder="Ліцей №1, Університет, Академія або Приватна практика">
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-cyber-solid" style="width: 100%; margin-top: 10px;">
+            Зареєструватися в системі
+          </button>
+        </form>
+
+        <div id="auth-alert-box" class="form-alert"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- MODAL 2: TEACHER STUDIO (CREATE & MANAGE)      -->
+  <!-- ============================================== -->
+  <div id="teacher-studio-modal" class="modal-overlay">
+    <div class="modal-card dashboard-modal-card">
+      <div class="modal-header">
+        <div>
+          <h3 style="font-size: 1.35rem; font-weight: 700; color: #fff;">Кабінет викладача (Teacher Studio)</h3>
+          <p style="font-size: 0.82rem; color: var(--neon-cyan); font-family: var(--font-mono);">
+            Створення навчальних дисциплін, публікація матеріалів та менеджмент учнів
+          </p>
+        </div>
+        <button class="modal-close" id="teacher-modal-close" aria-label="Закрити">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        
+        <!-- Dashboard Tabs -->
+        <div class="dashboard-tabs">
+          <button class="dash-tab-btn active" id="tab-btn-teacher-mycourses">Мої курси</button>
+          <button class="dash-tab-btn" id="tab-btn-teacher-create">➕ Створити новий курс</button>
+        </div>
+
+        <!-- Section 1: My Courses -->
+        <div id="teacher-section-mycourses">
+          <div id="teacher-courses-list" style="display: flex; flex-direction: column; gap: 16px;">
+            <p class="text-muted">Завантаження ваших курсів...</p>
+          </div>
+        </div>
+
+        <!-- Section 2: Create Course Form -->
+        <div id="teacher-section-create" style="display: none;">
+          <form id="form-create-course" class="enroll-form">
+            <div class="form-group">
+              <label class="form-label" for="course-title">Назва навчального курсу *</label>
+              <input type="text" id="course-title" name="title" class="form-control" placeholder="напр., Практична алгебра та геометрія для 10-11 класів" required>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="course-discipline">Предмет / Дисципліна *</label>
+                <input type="text" id="course-discipline" name="discipline" class="form-control" placeholder="Математика, Фізика, Історія, Хімія, Кібербезпека..." required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="course-category">Категорія</label>
+                <select id="course-category" name="category" class="form-control">
+                  <option value="stem">Точні науки (Математика, Фізика)</option>
+                  <option value="science">Природничі науки (Біологія, Хімія, Географія)</option>
+                  <option value="languages">Мови та Література (Англійська, Українська...)</option>
+                  <option value="humanities">Гуманітарні науки & Історія</option>
+                  <option value="cybersecurity">Кібербезпека</option>
+                  <option value="robotics">Робототехніка та Інженерія</option>
+                  <option value="vrar">VR / AR & Metaverse</option>
+                  <option value="programming">Програмування & ШІ</option>
+                  <option value="creative">Мистецтво та Дизайн</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="course-level">Рівень аудиторії</label>
+                <select id="course-level" name="level" class="form-control">
+                  <option value="Школа (5-9 класи)">Школа (5-9 класи)</option>
+                  <option value="Школа (10-11 класи)">Школа (10-11 класи)</option>
+                  <option value="Студенти / Університет">Студенти / Університет</option>
+                  <option value="Початковий">Початковий рівень</option>
+                  <option value="Поглиблений / Pro">Поглиблений / Pro</option>
+                  <option value="Всі рівні">Всі бажаючі</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="course-duration">Тривалість курсу</label>
+                <input type="text" id="course-duration" name="duration" class="form-control" placeholder="напр., 3 місяці або 24 академічні години">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="course-desc">Детальний опис та програма курсу *</label>
+              <textarea id="course-desc" name="description" class="form-control" rows="4" placeholder="Опишіть, чому навчаться студенти, формат занять, теми лекцій..." required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="course-tools">Інструменти / Матеріали (через кому)</label>
+              <input type="text" id="course-tools" name="techStack" class="form-control" placeholder="напр., GeoGebra, Zoom, Підручник Мерзляка, Презентації">
+            </div>
+
+            <button type="submit" class="btn btn-cyber-solid" style="width: 100%; margin-top: 10px;">
+              ⚡ Опублікувати курс у MongoDB Atlas
+            </button>
+          </form>
+        </div>
+
+        <div id="teacher-alert-box" class="form-alert"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- MODAL 3: STUDENT LEARNING HUB                  -->
+  <!-- ============================================== -->
+  <div id="student-hub-modal" class="modal-overlay">
+    <div class="modal-card dashboard-modal-card">
+      <div class="modal-header">
+        <div>
+          <h3 style="font-size: 1.35rem; font-weight: 700; color: #fff;">Кабінет студента / учня</h3>
+          <p style="font-size: 0.82rem; color: var(--neon-cyan); font-family: var(--font-mono);">
+            Мої навчальні курси, лекції, конспекти та посилання на вебінари
+          </p>
+        </div>
+        <button class="modal-close" id="student-modal-close" aria-label="Закрити">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        
+        <!-- Join by code strip -->
+        <div style="background: rgba(13, 20, 44, 0.7); border: 1px solid var(--border-cyan); border-radius: 10px; padding: 18px; margin-bottom: 22px;">
+          <h4 style="font-size: 1.05rem; color: #fff; margin-bottom: 8px;">Приєднатися до нового курсу</h4>
+          <form id="student-join-form" style="display: flex; gap: 10px;">
+            <input type="text" id="student-invite-code" class="form-control" placeholder="Код від вчителя (напр. MATH-4019)" style="text-transform: uppercase;" required>
+            <button type="submit" class="btn btn-cyber-solid" style="white-space: nowrap;">
+              Приєднатися
+            </button>
+          </form>
+        </div>
+
+        <h4 style="font-size: 1.15rem; color: #fff; margin-bottom: 14px;">Мої активні курси:</h4>
+        <div id="student-enrolled-courses" style="display: flex; flex-direction: column; gap: 16px;">
+          <p class="text-muted">Завантаження курсів...</p>
+        </div>
+
+        <div id="student-alert-box" class="form-alert"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- MODAL 4: ADD MATERIAL / WEBINAR MODAL          -->
+  <!-- ============================================== -->
+  <div id="add-material-modal" class="modal-overlay">
+    <div class="modal-card" style="max-width: 580px;">
+      <div class="modal-header">
+        <div>
+          <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff;">Опублікувати матеріал або вебінар</h3>
+          <p style="font-size: 0.8rem; color: var(--neon-cyan); font-family: var(--font-mono);" id="add-material-course-title">Курс: ...</p>
+        </div>
+        <button class="modal-close" id="material-modal-close" aria-label="Закрити">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <form id="form-add-material" class="enroll-form">
+          <input type="hidden" id="material-course-id" name="courseId">
+
+          <div class="form-group">
+            <label class="form-label" for="material-title">Тема лекції або вебінару *</label>
+            <input type="text" id="material-title" name="title" class="form-control" placeholder="Лекція 3: Інтеграли або Онлайн-вебінар у Google Meet" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="material-type">Тип матеріалу</label>
+              <select id="material-type" name="type" class="form-control">
+                <option value="lecture">Лекція / Конспект</option>
+                <option value="webinar">Онлайн-вебінар (Meet / Zoom)</option>
+                <option value="document">Документ / Презентація</option>
+                <option value="video">Відеозапис</option>
+                <option value="assignment">Практичне завдання</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="material-date">Дата проведення (опціонально)</label>
+              <input type="datetime-local" id="material-date" name="scheduledAt" class="form-control">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="material-link">Посилання на вебінар або файл (Zoom, Meet, YouTube, Drive)</label>
+            <input type="url" id="material-link" name="link" class="form-control" placeholder="https://meet.google.com/xxx-xxxx-xxx або посилання на запис">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="material-content">Зміст, конспект або коментар для учнів</label>
+            <textarea id="material-content" name="content" class="form-control" rows="4" placeholder="Тези лекції, домашнє завдання або інструкція для підключення до вебінару..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-cyber-solid" style="width: 100%; margin-top: 8px;">
+            Опублікувати для учнів
+          </button>
+        </form>
+
+        <div id="material-alert-box" class="form-alert"></div>
+      </div>
+    </div>
   </div>
 
   <!-- Client-side Scripts -->
