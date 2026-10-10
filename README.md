@@ -72,27 +72,20 @@ npm start
 
 ---
 
-## 🍃 Налаштування MongoDB Atlas (для ostap.yunak@gmail.com)
+## 🍃 Налаштування MongoDB Atlas (Виконано для ostap.yunak@gmail.com)
 
-1. Перейдіть на [MongoDB Atlas](https://www.mongodb.com/atlas) та увійдіть через Google (`ostap.yunak@gmail.com`).
-2. Створіть безкоштовний кластер **M0 Free**:
-   - Provider: **AWS**
-   - Region: **Frankfurt (`eu-central-1`)**
-3. У вкладці **Database Access**:
-   - Натисніть **Add New Database User**.
-   - Створіть користувача (наприклад, `ostap_admin`) та надійний пароль.
-   - Оберіть роль `Built-in Role: Read and write to any database`.
-4. У вкладці **Network Access**:
-   - Натисніть **Add IP Address**.
-   - Оберіть **Allow Access From Anywhere** (`0.0.0.0/0`), щоб Render міг підключатися з динамічних IP-адрес.
-5. Отримайте рядок підключення:
-   - Перейдіть у **Database** -> натисніть кнопку **Connect** біля вашого кластера.
-   - Оберіть **Drivers** (Node.js).
-   - Скопіюйте рядок формату:
-     ```text
-     mongodb+srv://ostap_admin:<ваш-пароль>@cluster0.xxxx.mongodb.net/osvitnii_horyzont?retryWrites=true&w=majority
-     ```
-6. Додайте цей рядок у змінні середовища `MONGODB_URI` в Render.com або локальний `.env`.
+Базу даних успішно створено та налаштовано в хмарі **MongoDB Atlas**:
+
+- **Організація:** `Ostap`
+- **Проект:** `osvitnii-horyzont` (ID: `6aca4ade5baf02c7ed8163e9`)
+- **Кластер:** `HorizonCluster` (Tier: **M0 Free**, AWS Frankfurt `eu-central-1`)
+- **База даних:** `osvitnii_horyzont`
+- **Користувач БД:** `ostap_admin`
+- **Мережевий доступ:** `0.0.0.0/0` (активовано для Render.com та локальної розробки)
+- **Готовий рядок підключення для Render.com:**
+  ```text
+  mongodb+srv://ostap_admin:HorizonSecurePass2026@horizoncluster.dy1xzc8.mongodb.net/osvitnii_horyzont?retryWrites=true&w=majority
+  ```
 
 ---
 
