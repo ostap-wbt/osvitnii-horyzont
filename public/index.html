@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Освітній горизонт | Платформа інноваційної IT-освіти майбутнього</title>
+  <meta name="description" content="Освітній горизонт: підготовка інженерів майбутнього у сфері кібербезпеки, робототехніки, цифрових мереж, VR/AR та штучного інтелекту. Запуск на Render.com та MongoDB Atlas.">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="stylesheet" href="/css/animations.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- Dynamic Cyber Canvas Background -->
+  <canvas id="particles-canvas"></canvas>
+  <div class="bg-grid-overlay"></div>
+  <div class="radial-glow-top"></div>
+
+  <div class="app-wrapper">
+
+    <!-- Top Infrastructure Status Bar -->
+    <header class="system-status-bar">
+      <div class="container">
+        <div class="status-group">
+          <span class="status-badge">
+            <span class="status-dot pulse"></span>
+            <span>ПЛАТФОРМА АКТИВНА: <strong>ОСВІТНІЙ ГОРИЗОНТ</strong></span>
+          </span>
+          <span class="status-badge" id="live-render-status">
+            Render.com: 🟢 Онлайн (Cloud Node)
+          </span>
+          <span class="status-badge" id="live-db-status">
+            MongoDB Atlas: 🍃 Підключення (ostap.yunak@gmail.com)
+          </span>
+        </div>
+        <div class="status-group">
+          <a href="https://github.com/ostap-wbt/osvitnii-horyzont" target="_blank" rel="noopener noreferrer" style="color: var(--neon-cyan); text-decoration: none;">
+            ⌥ GitHub: ostap-wbt/osvitnii-horyzont
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Navigation Bar -->
+    <nav class="navbar">
+      <div class="container">
+        <a href="#" class="brand-logo">
+          <img src="/assets/favicon.svg" alt="Логотип Освітній горизонт" class="logo-icon-svg">
+          <div class="brand-text">
+            <span class="brand-title">ОСВІТНІЙ ГОРИЗОНТ</span>
+            <span class="brand-subtitle">CYBER • ROBOTICS • VR/AR • NETWORKS • CODE</span>
+          </div>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#courses" class="nav-link">Напрямки</a></li>
+          <li><a href="#simulator" class="nav-link">Кібер-Термінал</a></li>
+          <li><a href="#labs" class="nav-link">R&D Лабораторії</a></li>
+          <li><a href="#roadmap" class="nav-link">Шлях студента</a></li>
+          <li><a href="#enroll" class="nav-link">Вступ</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="btn btn-cyber-outline btn-sm btn-open-modal">
+            Швидка консультація
+          </button>
+          <a href="#enroll" class="btn btn-cyber-solid btn-sm">
+            Записатись
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-grid">
+          
+          <div class="hero-content">
+            <div class="hero-badge-pill">
+              <span class="status-dot"></span>
+              <span>ПРИЙОМ 2026/2027 • ВІДКРИТО НАБІР ДО R&D ЛАБОРАТОРІЙ</span>
+            </div>
+
+            <h1 class="hero-title">
+              Квантовий стрибок у світ <br>
+              <span class="gradient-text">високих технологій</span>
+            </h1>
+
+            <p class="hero-subtitle">
+              Практична інженерна підготовка світового рівня. Опановуйте <strong>кібербезпеку</strong>, 
+              <strong>робототехніку</strong>, <strong>цифрові мережі 5G/6G</strong>, <strong>VR/AR просторові світи</strong> 
+              та <strong>програмування зі штучним інтелектом</strong> на реальних R&D проектах.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="#courses" class="btn btn-cyber-solid">
+                ⚡ Обрати спеціалізацію
+              </a>
+              <a href="#simulator" class="btn btn-cyber-primary">
+                💻 Запустити симулятор
+              </a>
+              <button class="btn btn-cyber-outline btn-open-modal">
+                Отримати консультацію
+              </button>
+            </div>
+
+            <!-- Metrics Strip -->
+            <div class="hero-metrics-strip">
+              <div class="metric-item">
+                <span class="metric-val">1,480+</span>
+                <span class="metric-label">Студентів & Випускників</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-val">97.4%</span>
+                <span class="metric-label">Працевлаштування</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-val">6 R&D</span>
+                <span class="metric-label">Лабораторій & Полігонів</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-val">48+</span>
+                <span class="metric-label">Партнерів High-Tech</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Right: Interactive Cyber Terminal -->
+          <div class="hero-interactive" id="simulator">
+            <div class="terminal-window">
+              <div class="terminal-header">
+                <div class="terminal-controls">
+                  <span class="term-dot red"></span>
+                  <span class="term-dot yellow"></span>
+                  <span class="term-dot green"></span>
+                </div>
+                <div class="terminal-title">horizon-sim-v2.6 // bash terminal</div>
+                <div style="font-size: 0.72rem; color: var(--neon-cyan);">LIVE SIMULATOR</div>
+              </div>
+
+              <div class="terminal-body" id="terminal-output">
+                <div class="term-line">
+                  <span class="term-prompt">horizon@platform:~$</span> system_init --env=production
+                </div>
+                <div class="term-line">
+                  [✓] Завантаження модулів ядра: Кібербезпека, Робототехніка, VR/AR, Мережі, ШІ... [OK]
+                </div>
+                <div class="term-line">
+                  [✓] Хмара: Render.com Cloud Platform [READY]
+                </div>
+                <div class="term-line">
+                  [✓] Кластер БД: MongoDB Atlas (ostap.yunak@gmail.com) [ONLINE]
+                </div>
+              </div>
+
+              <div class="terminal-quick-actions">
+                <span style="font-size: 0.72rem; color: var(--text-dim); display: block; width: 100%; margin-bottom: 2px;">
+                  Швидкі команди інтерактивної демонстрації:
+                </span>
+                <button class="term-btn" data-cmd="scan">🛡️ Сканувати периметр</button>
+                <button class="term-btn" data-cmd="robot">🤖 Дрон ROS 2</button>
+                <button class="term-btn" data-cmd="vr">🥽 VR OpenXR</button>
+                <button class="term-btn" data-cmd="net">🌐 Ping 5G</button>
+                <button class="term-btn" data-cmd="ai">🧠 AI Інференс</button>
+                <button class="term-btn" data-cmd="status">⚡ Статус стеку</button>
+                <button class="term-btn" data-cmd="courses">📚 Курси</button>
+                <button class="term-btn" data-cmd="help">❓ Допомога</button>
+              </div>
+
+              <div style="padding: 8px 16px; background: rgba(5,8,18,0.9); border-top: 1px solid rgba(0,240,255,0.1); display: flex; align-items: center; gap: 8px;">
+                <span class="term-prompt" style="font-size: 0.82rem;">&gt;</span>
+                <input type="text" id="terminal-input" placeholder="Введіть команду або оберіть кнопку вище..." style="background: transparent; border: none; outline: none; color: #fff; font-family: var(--font-mono); font-size: 0.82rem; width: 100%;">
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Directions & Course Catalog Section -->
+    <section class="section" id="courses">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">// КАТАЛОГ СПЕЦІАЛІЗАЦІЙ</span>
+          <h2 class="section-title">Оберіть свій вектор у світі технологій</h2>
+          <p class="section-desc">
+            Програми розроблені спільно з інженерами провідних технологічних компаній, 
+            наукових інститутів та оборонних підприємств.
+          </p>
+        </div>
+
+        <!-- Filter Matrix Tabs -->
+        <div class="filter-tabs">
+          <button class="filter-btn active" data-category="all">Всі спеціалізації</button>
+          <button class="filter-btn" data-category="cybersecurity">🛡️ Кібербезпека</button>
+          <button class="filter-btn" data-category="robotics">🤖 Робототехніка & IoT</button>
+          <button class="filter-btn" data-category="vrar">🥽 VR / AR & Metaverse</button>
+          <button class="filter-btn" data-category="networks">🌐 Цифрові мережі & Cloud</button>
+          <button class="filter-btn" data-category="programming">💻 Програмування & ШІ</button>
+        </div>
+
+        <!-- Courses Dynamic Grid -->
+        <div class="courses-grid" id="courses-grid">
+          <!-- Populated dynamically via /api/courses -->
+          <div class="term-prompt" style="text-align: center; grid-column: 1 / -1; padding: 40px;">
+            Ініціалізація каталогу навчальних програм...
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- High-Tech R&D Infrastructure & Labs -->
+    <section class="section" id="labs" style="background: rgba(8, 12, 28, 0.4);">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">// МАТЕРІАЛЬНО-ТЕХНІЧНИЙ ХАБ</span>
+          <h2 class="section-title">Практичні лабораторії та полігони</h2>
+          <p class="section-desc">
+            Студенти мають доступ до сучасного обладнання як очно у кампусі, 
+            так і віддалено через віртуалізовані цифрові двійники 24/7.
+          </p>
+        </div>
+
+        <div class="labs-grid">
+          <div class="lab-card">
+            <div class="lab-icon-box">🛡️</div>
+            <h3 class="lab-title">Кіберполігон "Cyber Range"</h3>
+            <p class="lab-desc">
+              Ізольована інфраструктура з віртуальними серверами та мережами для моделювання реальних кібератак, 
+              відпрацювання Red/Blue Team змагань та дослідження шкідливого ПЗ у безпечному sandbox.
+            </p>
+          </div>
+
+          <div class="lab-card">
+            <div class="lab-icon-box">🤖</div>
+            <h3 class="lab-title">Робототехнічний R&D Полігон</h3>
+            <p class="lab-desc">
+              Парк тестових колісних та гусеничних роботів, безпілотні авіаційні комплекси (UAV), 
+              LiDAR-сканери, паяльні станції та плати розробки STM32/ESP32 з підтримкою ROS 2.
+            </p>
+          </div>
+
+          <div class="lab-card">
+            <div class="lab-icon-box">🥽</div>
+            <h3 class="lab-title">Spatial Computing & VR Лабораторія</h3>
+            <p class="lab-desc">
+              Шоломи віртуальної та змішаної реальності Meta Quest 3, Apple Vision Pro, 
+              сенсори відстеження жестів, стенди калібрування трекінгу та станції рендерингу на базі RTX 4090.
+            </p>
+          </div>
+
+          <div class="lab-card">
+            <div class="lab-icon-box">🌐</div>
+            <h3 class="lab-title">5G & Хмарний Дата-вузол</h3>
+            <p class="lab-desc">
+              Маршрутизатори та комутатори Cisco Catalyst, приватна базова станція 5G Standalone, 
+              стенди програмно-конфігурованих мереж (SDN) та доступ до кластерів Kubernetes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Learning Roadmap -->
+    <section class="section" id="roadmap">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">// ОСВІТНЯ ТРАЄКТОРІЯ</span>
+          <h2 class="section-title">4 кроки від базових знань до High-Tech інженера</h2>
+          <p class="section-desc">
+            Структурована методологія інтенсивного практичного занурення з персональним менторським супроводом.
+          </p>
+        </div>
+
+        <div class="roadmap-steps">
+          <div class="step-card">
+            <div class="step-number">01</div>
+            <h3 class="step-title">Фундамент & Архітектура</h3>
+            <p class="step-desc">
+              Глибоке розуміння базових принципів комп'ютерних систем, протоколів передачі даних, 
+              математичного апарату та алгоритмів.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">02</div>
+            <h3 class="step-title">R&D Лабораторний практикум</h3>
+            <p class="step-desc">
+              Щотижневі практичні воркшопи: написання прошивок, збирання роботів, налаштування фаєрволів 
+              та кодинг просторових VR-додатків.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">03</div>
+            <h3 class="step-title">Дипломний High-Tech проект</h3>
+            <p class="step-desc">
+              Розробка власного завершеного інженерного рішення у партнерстві з реальною IT/DefenceTech компанією. 
+              Код публікується на GitHub.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">04</div>
+            <h3 class="step-title">Кар'єра & Стажування</h3>
+            <p class="step-desc">
+              Підготовка до технічних інтерв'ю, верифікація сертифікатами та прямі рекомендації 
+              до працевлаштування у топ-компанії.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Registration Banner Form (MongoDB Atlas Integration) -->
+    <section class="section" id="enroll">
+      <div class="container">
+        <div class="enroll-banner">
+          <div class="enroll-grid">
+            <div>
+              <span class="section-tag">// ВСТУП 2026/2027</span>
+              <h2 style="font-size: 2.3rem; font-weight: 800; margin-bottom: 16px; line-height: 1.2;">
+                Почніть навчання на платформі <span class="gradient-text">Освітній горизонт</span>
+              </h2>
+              <p style="color: var(--text-muted); margin-bottom: 24px; font-size: 1.05rem;">
+                Заповніть заявку для бронювання місця або безкоштовної консультації з технічним ментором. 
+                Дані надійно зберігаються у хмарі <strong>MongoDB Atlas</strong>.
+              </p>
+
+              <div style="font-family: var(--font-mono); font-size: 0.84rem; color: #a4b8d9; display: flex; flex-direction: column; gap: 8px;">
+                <div>✓ Безкоштовний доступ до першого тижня лекцій</div>
+                <div>✓ Тестування рівня підготовки перед стартом</div>
+                <div>✓ Гнучкий графік (вечірні групи та weekend-інтенсиви)</div>
+                <div>✓ Гарантія менторської підтримки 7 днів на тиждень</div>
+              </div>
+            </div>
+
+            <!-- Enrollment Form -->
+            <form id="banner-registration-form" class="enroll-form">
+              <div class="form-group">
+                <label class="form-label" for="banner-name">Ваше повне ім'я *</label>
+                <input type="text" id="banner-name" name="fullName" class="form-control" placeholder="Остап Юнак" required>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="banner-email">Електронна пошта *</label>
+                  <input type="email" id="banner-email" name="email" class="form-control" placeholder="ostap.yunak@gmail.com" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="banner-phone">Номер телефону *</label>
+                  <input type="tel" id="banner-phone" name="phone" class="form-control" placeholder="+380 (98) 000-00-00" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="banner-course-select">Обраний напрямок навчання *</label>
+                <select id="banner-course-select" name="courseId" class="form-control" required>
+                  <option value="" disabled selected>Завантаження курсів...</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Формат занять</label>
+                  <select name="format" class="form-control">
+                    <option value="online">Online Interactive</option>
+                    <option value="hybrid">Гібридний (Онлайн + Кампус)</option>
+                    <option value="campus-labs">Очні R&D Лабораторії</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Ваш поточний рівень</label>
+                  <select name="experienceLevel" class="form-control">
+                    <option value="beginner">Початківець</option>
+                    <option value="intermediate">Середній (Middle)</option>
+                    <option value="advanced">Досвідчений (Senior/Tech)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="banner-notes">Коментар або питання (опціонально)</label>
+                <input type="text" id="banner-notes" name="notes" class="form-control" placeholder="Цікавить грант, розклад занять або обладнання лабораторії...">
+              </div>
+
+              <button type="submit" class="btn btn-cyber-solid" style="width: 100%; margin-top: 8px;">
+                🚀 Подати заявку (Зберегти в MongoDB Atlas)
+              </button>
+
+              <div id="banner-alert-box" class="form-alert"></div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Modal Window for Registration -->
+    <div id="registration-modal" class="modal-overlay">
+      <div class="modal-card">
+        <div class="modal-header">
+          <div>
+            <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff;">Запис на обраний курс</h3>
+            <p style="font-size: 0.82rem; color: var(--neon-cyan); font-family: var(--font-mono);">Освітній горизонт // Реєстраційна форма</p>
+          </div>
+          <button id="modal-close-btn" class="modal-close" aria-label="Закрити">&times;</button>
+        </div>
+
+        <div class="modal-body">
+          <form id="modal-registration-form" class="enroll-form">
+            <div class="form-group">
+              <label class="form-label">Ваше ім'я *</label>
+              <input type="text" name="fullName" class="form-control" placeholder="Остап Юнак" required>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Email *</label>
+                <input type="email" name="email" class="form-control" placeholder="ostap.yunak@gmail.com" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Телефон *</label>
+                <input type="tel" name="phone" class="form-control" placeholder="+380 98 000 0000" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Напрямок / Спеціалізація *</label>
+              <select id="modal-course-select" name="courseId" class="form-control" required>
+                <option value="" disabled selected>Оберіть напрямок...</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Формат навчання</label>
+                <select name="format" class="form-control">
+                  <option value="online">Online</option>
+                  <option value="hybrid">Гібридний</option>
+                  <option value="campus-labs">R&D Лабораторії</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Рівень підготовки</label>
+                <select name="experienceLevel" class="form-control">
+                  <option value="beginner">Початківець</option>
+                  <option value="intermediate">Middle</option>
+                  <option value="advanced">Senior / Pro</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Коментар</label>
+              <input type="text" name="notes" class="form-control" placeholder="Додаткові побажання...">
+            </div>
+
+            <button type="submit" class="btn btn-cyber-solid" style="width: 100%; margin-top: 10px;">
+              ⚡ Підтвердити реєстрацію
+            </button>
+
+            <div id="modal-alert-box" class="form-alert"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <div class="brand-logo" style="margin-bottom: 14px;">
+              <img src="/assets/favicon.svg" alt="Логотип" class="logo-icon-svg" style="width: 30px; height: 30px;">
+              <span class="brand-title" style="font-size: 1.15rem;">ОСВІТНІЙ ГОРИЗОНТ</span>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.88rem; max-width: 320px; line-height: 1.5; margin-bottom: 16px;">
+              Передова платформа практичної IT-освіти майбутнього. Формуємо лідерів у сферах кіберзахисту, 
+              робототехніки, просторових обчислень та штучного інтелекту.
+            </p>
+            <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--neon-cyan);">
+              Контактний email: <a href="mailto:ostap.yunak@gmail.com" style="color: var(--neon-cyan);">ostap.yunak@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h4>Напрямки</h4>
+            <ul>
+              <li><a href="#courses">Кібербезпека & SOC</a></li>
+              <li><a href="#courses">Робототехніка & ROS 2</a></li>
+              <li><a href="#courses">VR/AR & Spatial Comp.</a></li>
+              <li><a href="#courses">Цифрові мережі 5G/6G</a></li>
+              <li><a href="#courses">Fullstack & ШІ (AI/ML)</a></li>
+              <li><a href="#courses">Квантова криптографія</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Інфраструктура</h4>
+            <ul>
+              <li><a href="#labs">R&D Лабораторії</a></li>
+              <li><a href="#simulator">Онлайн Кібер-Термінал</a></li>
+              <li><a href="https://render.com" target="_blank" rel="noopener">Хостинг: Render.com</a></li>
+              <li><a href="https://www.mongodb.com/atlas" target="_blank" rel="noopener">База даних: MongoDB Atlas</a></li>
+              <li><a href="https://github.com/ostap-wbt/osvitnii-horyzont" target="_blank" rel="noopener">GitHub Репозиторій</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Статус системи</h4>
+            <div style="background: rgba(13, 20, 44, 0.6); border: 1px solid rgba(0, 240, 255, 0.15); border-radius: 8px; padding: 14px; font-family: var(--font-mono); font-size: 0.78rem; display: flex; flex-direction: column; gap: 8px;">
+              <div>🌐 Сервер: Render.com Node.js Web Service</div>
+              <div>🍃 База даних: MongoDB Atlas (Cluster0)</div>
+              <div>🔒 Протокол: TLS 1.3 / OWASP Verified</div>
+              <div>👤 Акаунт власника: ostap.yunak@gmail.com</div>
+              <div>🐙 Репозиторій: ostap-wbt/osvitnii-horyzont</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div>&copy; 2026 Освітній горизонт. Всі права захищено.</div>
+          <div>Розроблено для інженерів та інноваторів майбутнього.</div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Client-side Scripts -->
+  <script src="/js/particles.js"></script>
+  <script src="/js/terminal.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

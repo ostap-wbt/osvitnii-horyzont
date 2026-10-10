@@ -1,0 +1,32 @@
+{
+  "name": "osvitnii-horyzont",
+  "version": "1.0.0",
+  "description": "Платформа інноваційної IT-освіти 'Освітній горизонт' — Кібербезпека, Робототехніка, Мережі, VR/AR, ШІ та Програмування",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "education",
+    "cybersecurity",
+    "robotics",
+    "vr-ar",
+    "networks",
+    "programming",
+    "ai",
+    "mongodb-atlas",
+    "render"
+  ],
+  "author": "Ostap Yunak <ostap.yunak@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^7.8.4"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

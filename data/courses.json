@@ -1,0 +1,110 @@
+[
+  {
+    "id": "cyber-defense",
+    "category": "cybersecurity",
+    "categoryName": "Кібербезпека",
+    "badge": "TOP RATED",
+    "title": "Етичний хакінг та Кібероборона (SOC & Red/Blue Team)",
+    "description": "Глибоке занурення в аналіз вразливостей, тестування на проникнення (PenTest), реверс-інжиніринг, захист критичної інфраструктури та моніторинг інцидентів у віртуальному кіберполігоні.",
+    "duration": "6 місяців",
+    "level": "Middle / Pro",
+    "techStack": ["Kali Linux", "Wireshark", "Metasploit", "Splunk", "Ghidra", "Docker"],
+    "highlights": [
+      "Практика на симуляторі кібератак Cyber Range",
+      "Розбір реальних кейсів протидії APT-загрозам",
+      "Підготовка до сертифікацій CEH та CompTIA Security+"
+    ],
+    "icon": "shield-check",
+    "spotsLeft": 7
+  },
+  {
+    "id": "robotics-autonomous",
+    "category": "robotics",
+    "categoryName": "Робототехніка та IoT",
+    "badge": "HARDWARE LAB",
+    "title": "Автономні роботи, ROS 2 та Вбудовані системи (STM32/ESP32)",
+    "description": "Створення інтелектуальних наземних і літальних платформ (FPV/UAV), алгоритми навігації SLAM, комп'ютерний зір для роботів, програмування мікроконтролерів на C/C++ та Python.",
+    "duration": "7 місяців",
+    "level": "Базовий / Middle",
+    "techStack": ["ROS 2", "STM32 C/C++", "FreeRTOS", "OpenCV", "Gazebo Simulator", "LiDAR"],
+    "highlights": [
+      "Фізичний бокс деталей для складання дрона / автономного шасі",
+      "Створення цифрового двійника в середовищі симуляції Gazebo",
+      "Проектування друкованих плат (PCB) в KiCad"
+    ],
+    "icon": "cpu",
+    "spotsLeft": 5
+  },
+  {
+    "id": "spatial-vr-ar",
+    "category": "vrar",
+    "categoryName": "VR / AR & Metaverse",
+    "badge": "FUTURE TECH",
+    "title": "Розробка під VR/AR & Просторові інтерфейси (Spatial Computing)",
+    "description": "Проектування інтерактивних віртуальних світів та доповненої реальності для шоломів Meta Quest 3, Apple Vision Pro та мобільних пристроїв на рушіях Unreal Engine 5 та Unity.",
+    "duration": "5 місяців",
+    "level": "Базовий / Pro",
+    "techStack": ["Unreal Engine 5", "Unity", "C#", "OpenXR", "WebXR", "Blender 3D"],
+    "highlights": [
+      "Доступ до VR-лабораторії з гарнітурами Quest 3 та Vision Pro",
+      "Фізика взаємодії, хенд-трекінг та просторовий звук",
+      "Створення власної мультиплеєрної VR-симуляції для портфоліо"
+    ],
+    "icon": "glasses",
+    "spotsLeft": 8
+  },
+  {
+    "id": "digital-networks-cloud",
+    "category": "networks",
+    "categoryName": "Цифрові мережі & Cloud",
+    "badge": "INFRASTRUCTURE",
+    "title": "Мережева інженерія, 5G/6G архітектура та Cloud DevOps",
+    "description": "Проектування високонадійних розподілених мереж, маршрутизація BGP/OSPF, програмно-конфігуровані мережі (SDN), побудова хмарної інфраструктури в AWS/GCP та контейнеризація Kubernetes.",
+    "duration": "5 місяців",
+    "level": "Базовий / Middle",
+    "techStack": ["Cisco CCNA/CCNP", "Kubernetes", "Terraform", "AWS", "WireGuard", "Wireshark"],
+    "highlights": [
+      "Робота з віртуальними стендами маршрутизаторів Cisco Packet Tracer/EVE-NG",
+      "Захищені VPN-тунелі, Mesh-мережі та стійкість до DDoS",
+      "Автоматизація інфраструктури як коду (IaC)"
+    ],
+    "icon": "network",
+    "spotsLeft": 12
+  },
+  {
+    "id": "software-ai-engineering",
+    "category": "programming",
+    "categoryName": "Програмування & ШІ",
+    "badge": "HIGH DEMAND",
+    "title": "Fullstack Engineering & Інтеграція штучного інтелекту (AI/ML)",
+    "description": "Сучасна розробка від архітектури мікросервісів на Node.js/Python/Go до навчання та впровадження мовних моделей (LLM), агентних AI-систем та реактивних інтерфейсів.",
+    "duration": "6 місяців",
+    "level": "Всі рівні",
+    "techStack": ["TypeScript", "Python", "Go", "PyTorch", "LangChain", "MongoDB / PostgreSQL"],
+    "highlights": [
+      "Створення автономних AI-агентів для бізнесу та науки",
+      "Розробка масштабованих хмарних API з високим навантаженням",
+      "Командний хакатон та реальний клієнтський кейс"
+    ],
+    "icon": "code",
+    "spotsLeft": 6
+  },
+  {
+    "id": "crypto-quantum",
+    "category": "cybersecurity",
+    "categoryName": "Кібербезпека & ШІ",
+    "badge": "NEW 2026",
+    "title": "Постквантова криптографія та Безпека систем штучного інтелекту",
+    "description": "Дослідження криптографічних алгоритмів наступного покоління, стійких до квантових комп'ютерів (NIST стандарти), захист нейромереж від Prompt Injection та атак на навчальні дані.",
+    "duration": "4 місяці",
+    "level": "Advanced",
+    "techStack": ["Python", "Qiskit", "C++", "OpenSSL", "NIST PQC", "adversarial-robustness-toolbox"],
+    "highlights": [
+      "Робота з хмарними квантовими симуляторами",
+      "Розробка захищених комунікаційних протоколів",
+      "Наукові публікації та інноваційні проекти"
+    ],
+    "icon": "cpu",
+    "spotsLeft": 4
+  }
+]
