@@ -2,10 +2,13 @@
 
 > **Платформа інноваційної IT-освіти майбутнього**: Кібербезпека, Робототехніка & IoT, Цифрові мережі, Віртуальна та доповнена реальність (VR/AR), Штучний інтелект та Сучасне програмування.
 
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com)
+[![Live Website](https://img.shields.io/badge/Live%20Website-osvitnii--horyzont.onrender.com-00f0ff?style=flat&logo=render)](https://osvitnii-horyzont.onrender.com)
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://dashboard.render.com/web/srv-db54ppjrjlhs73ce4clg)
 [![MongoDB Atlas](https://img.shields.io/badge/Database-MongoDB%20Atlas-47A248?style=flat&logo=mongodb&logoColor=white)](https://www.mongodb.com/atlas)
 [![Node.js](https://img.shields.io/badge/Runtime-Node.js%20v16%2B-339933?style=flat&logo=node.js&logoColor=white)](https://nodejs.org/)
 [![GitHub Repo](https://img.shields.io/badge/Repository-GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/ostap-wbt/osvitnii-horyzont)
+
+🔥 **Онлайн-сайт платформи в реальному часі:** [**https://osvitnii-horyzont.onrender.com**](https://osvitnii-horyzont.onrender.com)
 
 ---
 
